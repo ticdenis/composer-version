@@ -1,0 +1,45 @@
+#!/usr/bin/env php
+<?php
+
+$argv = array_splice($argv, 1);
+
+if (empty($argv)) {
+    echo 'Please specify version increment type: (major, minor, patch)'.PHP_EOL;
+} else {
+    $types = ['major', 'minor', 'patch'];
+    $type = strtolower($argv[0]);
+
+    if (!in_array($type, $types)) {
+        throw new \InvalidArgumentException('The version type is not valid.');
+    }
+
+    $file = json_decode(file_get_contents('composer.json'));
+
+    if (!isset($file->version)) {
+        $file->version = '0.0.0';
+    }
+
+    echo $file->version.' -> ';
+
+    $version = explode('.', $file->version);
+    switch ($type) {
+        case 'major':
+            $version[0] = ((int) $version[0]) + 1;
+            $version[1] = 0;
+            $version[2] = 0;
+            break;
+        case 'minor':
+            $version[1] = ((int) $version[1]) + 1;
+            $version[2] = 0;
+            break;
+        case 'patch':
+            $version[2] = ((int) $version[2]) + 1;
+            break;
+    }
+
+    $file->version = implode('.', $version);
+
+    file_put_contents('composer.json', json_encode($file, JSON_PRETTY_PRINT + JSON_UNESCAPED_SLASHES));
+
+    echo $file->version.PHP_EOL;
+}
