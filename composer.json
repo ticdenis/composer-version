@@ -1,19 +1,23 @@
 {
-    "version": "1.0.0",
-    "license": "MIT",
-    "name": "ticdenis/composer-version",
-    "description": "Command-line helper for Composer to bump versions using semver.",
-    "keywords": [
-        "semver",
-        "version",
-        "semantic",
-        "versioning",
-        "Semantic Versioning"
-    ],
-    "authors": [
-        {
-            "name": "Denis Navarro",
-            "role": "Developer"
-        }
-    ]
+	"version": "1.0.1",
+	"license": "MIT",
+	"name": "ticdenis/composer-version",
+	"description": "Command-line helper for Composer to bump versions using semver.",
+	"keywords": [
+		"semver",
+		"version",
+		"semantic",
+		"versioning",
+		"Semantic Versioning"
+	],
+	"authors": [
+		{
+			"name": "Denis Navarro",
+			"role": "Developer"
+		}
+	],
+	"minimum-stability": "stable",
+	"bin": [
+		"composer-version"
+	]
 }
