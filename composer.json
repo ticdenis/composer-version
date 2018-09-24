@@ -1,5 +1,6 @@
 {
-    "version": "1.0.1",
+    "type": "composer-plugin",
+    "version": "1.0.2",
     "license": "MIT",
     "name": "ticdenis/composer-version",
     "description": "Command-line helper for Composer to bump versions using semver.",
