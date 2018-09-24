@@ -5,13 +5,13 @@ Command-line helper for Composer to bump versions using [semver](http://semver.o
 ## Install
 
 ```bash
-composer require --dev ticdenis/version
+composer require --dev ticdenis/composer-version
 ```
 
 ## Usage
 
 ```bash
-vendor/bin/version
+vendor/bin/ticdenis/composer-version
 ```
 
 ## License
