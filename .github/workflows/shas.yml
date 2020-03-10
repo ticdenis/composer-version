@@ -5,6 +5,8 @@ on: [push, pull_request]
 jobs:
   format:
     runs-on: ${{ matrix.os }}
+    env:
+      VERSION: "$(git rev-parse --short ${{ github.sha }})"
     strategy:
       matrix:
         os: [windows-latest, ubuntu-latest, macos-latest]
@@ -14,6 +16,6 @@ jobs:
     - name: shas
       run: |
         echo "large: ${{github.sha}}"
-        echo "$(git rev-parse --short ${{ github.sha }})"
+        echo $VERSION
         mkdir -p test
         ls -la test
