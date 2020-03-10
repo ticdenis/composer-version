@@ -16,4 +16,5 @@ jobs:
     - name: shas
       run: |
         echo "large: ${{github.sha}}"
-        echo "short: ${VERSION}"
+        echo "short: $VERSION"
+        mkdir -p test
