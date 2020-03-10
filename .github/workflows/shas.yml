@@ -6,7 +6,7 @@ jobs:
   format:
     runs-on: ${{ matrix.os }}
     env:
-      VERSION: ${{$(git rev-parse --short ${{ github.sha }})}}
+      VERSION: git rev-parse --short ${{ github.sha }}
     strategy:
       matrix:
         os: [windows-latest, ubuntu-latest, macos-latest]
