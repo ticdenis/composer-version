@@ -2,7 +2,7 @@ name: shas
 
 on: [push, pull_request]
 env:
-  VERSION: $(git rev-parse --short=8 ${{ github.sha }})
+  VERSION: "$(git rev-parse --short ${{ github.sha }})"
 
 jobs:
   format:
