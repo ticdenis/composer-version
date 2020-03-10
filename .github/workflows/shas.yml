@@ -14,4 +14,4 @@ jobs:
     - name: shas
       run: |
         echo "large: ${{github.sha}}"
-        echo "short: ${{github.sha::8}}"
+        echo "short: ${{github.sha:8}}"
