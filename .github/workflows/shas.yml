@@ -1,8 +1,6 @@
 name: shas
 
 on: [push, pull_request]
-env:
-  VERSION: "$(git rev-parse --short ${{ github.sha }})"
 
 jobs:
   format:
@@ -16,5 +14,6 @@ jobs:
     - name: shas
       run: |
         echo "large: ${{github.sha}}"
-        echo "short: $VERSION"
+        echo "$(git rev-parse --short ${{ github.sha }})"
         mkdir -p test
+        ls -la test
